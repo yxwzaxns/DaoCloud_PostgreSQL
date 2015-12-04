@@ -9,16 +9,16 @@ import (
 )
 
 func main() {
-	host := os.Getenv("POSTGRES_PORT_5432_TCP_ADDR")
-	port := os.Getenv("POSTGRES_PORT_5432_TCP_PORT")
-	username := os.Getenv("USERNAME")
-	password := os.Getenv("PASSWORD")
+	host := os.Getenv("POSTGRESQL_PORT_5432_TCP_ADDR")
+	port := os.Getenv("POSTGRESQL_PORT_5432_TCP_PORT")
+	username := os.Getenv("POSTGRESQL_USERNAME")
+	password := os.Getenv("POSTGRESQL_PASSWORD")
 
-	dbname := os.Getenv("INSTANCE_NAME")
+	dbname := os.Getenv("POSTGRESQL_INSTANCE_NAME")
 
 	connection_info := "host=" + host + " port=" + port + " user=" + username + " password=" + password + " dbname=" + dbname + " sslmode=disable"
 	fmt.Println(connection_info)
-	db, err := sql.Open("postgres", connection_info)
+	db, err := sql.Open("POSTGRESQL", connection_info)
 	if err != nil {
 		fmt.Println("Open Error")
 		return
