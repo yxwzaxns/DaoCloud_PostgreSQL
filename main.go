@@ -18,7 +18,7 @@ func main() {
 
 	connection_info := "host=" + host + " port=" + port + " user=" + username + " password=" + password + " dbname=" + dbname + " sslmode=disable"
 	fmt.Println(connection_info)
-	db, err := sql.Open("POSTGRESQL", connection_info)
+	db, err := sql.Open("postgres", connection_info)
 	if err != nil {
 		fmt.Println("Open Error")
 		return
